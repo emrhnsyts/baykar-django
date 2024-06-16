@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "drf_yasg",
     "djoser",
     "django_filters",
     "ihas.apps.IhasConfig",
@@ -106,3 +107,8 @@ SIMPLE_JWT = {
 
 DJOSER = {"USER_CREATE_PASSWORD_RETYPE": True}
 
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {"type": "apiKey", "name": "Authorization", "in": "header"}
+    }
+}
