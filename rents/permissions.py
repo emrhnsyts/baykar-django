@@ -5,6 +5,7 @@ class IsObjectOwner(permissions.BasePermission):
     """
     Checks if the requesting user is the owner of the object.
     """
+
     def has_object_permission(self, request, view, obj):
         """
         Returns True if the requesting user is the owner of the object,
@@ -12,5 +13,4 @@ class IsObjectOwner(permissions.BasePermission):
         """
         if obj.user == request.user:
             return True
-        else:
-            return False
+        return False

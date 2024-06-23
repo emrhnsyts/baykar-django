@@ -23,16 +23,14 @@ def validate_dates(data):
     return data
 
 
-class RentSerializer(serializers.ModelSerializer):
+class RentCreateSerializer(serializers.ModelSerializer):
     """
     Serializer for the Rent model.
     """
 
-    user = serializers.PrimaryKeyRelatedField(read_only=True)
-
     class Meta:
         model = Rent
-        fields = "__all__"
+        fields = ["rent_start_date", "rent_end_date", "iha"]
 
     def validate(self, data):
         return validate_dates(data)

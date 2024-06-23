@@ -13,16 +13,17 @@ djoser=2.2.2
 
 djangorestframework-simplejwt=5.3.1
 
+drf-yasg==1.21.7
 
 ## endpoints
 
--  **LOGIN**
+-  **REGISTER**
 
 -  *POST, auth/users*
 
 - body = (username, email(isteğe bağlı), password, re_password)
 
--  **REGISTER**
+-  **LOGIN**
 
 -  *POST, auth/jwt/create*
 
@@ -42,15 +43,11 @@ djangorestframework-simplejwt=5.3.1
 
 - response = PUT and GET returns the IHA, DELETE does not return anything
 
--  *POST api/v1/ihas/[id]/rent*
-
-- response = IHA rented
-
 -  **Rent**
 
--  *GET api/v1/rents/*
+-  *GET, POST api/v1/rents/*
 
-- response = all the rent registers for the authenticated user (list(id, iha(id, brand, model, weight, category), rent_end_date, rent_start_date)
+- response = GET returns all the rent registers for the authenticated user (list(id, iha(id, brand, model, weight, category), rent_end_date, rent_start_date), POST returns the iha rented
 
 -  *GET, PUT, DELETE api/v1/rents/[id]*
 

@@ -22,10 +22,9 @@ class IHA(models.Model):
     """
     IHA model representing unmanned aerial vehicles.
     """
+
     brand = models.CharField(max_length=30)
     model = models.CharField(max_length=30, choices=ihas)
     weight = models.CharField(max_length=10, choices=weights)
     category = models.CharField(max_length=50)
-    rented_by = models.ManyToManyField(
-        User, through="rents.Rent", through_fields=("iha", "user")
-    )
+    rented_by = models.ManyToManyField(User, through="rents.Rent")

@@ -20,8 +20,8 @@ INSTALLED_APPS = [
     "drf_yasg",
     "djoser",
     "django_filters",
-    "ihas.apps.IhasConfig",
-    "rents.apps.RentsConfig",
+    "ihas",
+    "rents",
 ]
 
 MIDDLEWARE = [
