@@ -16,9 +16,9 @@ def validate_dates(data):
         raise serializers.ValidationError(
             "Rent end and start date must be in the future."
         )
-    if data["rent_end_date"] < data["rent_start_date"]:
+    if data["rent_end_date"] <= data["rent_start_date"]:
         raise serializers.ValidationError(
-            "Rent end date can not be ahead of rent start date."
+            "Rent end date can not be equal to or ahead of rent start date."
         )
     return data
 
